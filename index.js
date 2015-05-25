@@ -19,7 +19,7 @@ module.exports = function(options) {
       });
     }
 
-    if (options.filter) {
+    if (options.exclude) {
 
       var
         excluded,
