@@ -1,0 +1,11 @@
+{
+  "name": "gulp-rev-delete-original",
+  "version": "0.0.1",
+  "keywords": [
+    "gulpplugin"
+  ],
+  "dependencies": {
+    "rimraf": "^2.3.4",
+    "through2": "^0.6.5"
+  }
+}
