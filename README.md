@@ -26,7 +26,7 @@ Delete the original file rewritten by [gulp-rev](https://github.com/sindresorhus
 
 #### exclude 
 
-A filter `RegExp` or `funciton` that allows you to exclude certain files. 
+A filter `RegExp` or `function` that allows you to exclude certain files. 
 
 ##### Example
 
