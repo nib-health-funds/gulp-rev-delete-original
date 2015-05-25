@@ -34,6 +34,8 @@ module.exports = function(options) {
 
       if (!excluded) {
         del();
+      } else {
+        cb(null, file);
       }
 
     } else {
