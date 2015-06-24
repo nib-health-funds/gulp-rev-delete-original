@@ -4,7 +4,7 @@ Delete the original file rewritten by [gulp-rev](https://github.com/sindresorhus
 
 ## Installation
 
-    npm i --save nib-health-funds/gulp-rev-delete-original
+    npm i --save gulp-rev-delete-original
   
 ## Usage
 
