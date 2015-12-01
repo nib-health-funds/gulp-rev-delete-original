@@ -1,9 +1,10 @@
 {
   "name": "gulp-rev-delete-original",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "keywords": [
     "gulpplugin",
     "rev",
+    "rev-del",
     "gulp-rev",
     "gulp-rev-all",
     "gulp-rev-napkin"

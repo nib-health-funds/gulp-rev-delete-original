@@ -6,7 +6,7 @@ Delete the original file rewritten by
 
 ## Installation
 
-    npm i --save gulp-rev-delete-original
+    npm install --save-dev gulp-rev-delete-original
   
 ## Usage
 
@@ -28,7 +28,7 @@ Delete the original file rewritten by
 
 #### exclude 
 
-A filter `RegExp` or `function` that allows you to exclude certain files. 
+A filter `RegExp` or `function` that allows you to exclude certain files from being deleted.
 
 ##### Example
 
