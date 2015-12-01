@@ -1,6 +1,8 @@
 # gulp-rev-delete-original
 
-Delete the original file rewritten by [gulp-rev](https://github.com/sindresorhus/gulp-rev).
+Delete the original file rewritten by
+[gulp-rev](https://www.npmjs.com/package/gulp-rev) or
+[gulp-rev-all](https://www.npmjs.com/package/gulp-rev-all).
 
 ## Installation
 
