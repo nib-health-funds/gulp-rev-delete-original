@@ -3,19 +3,27 @@ var rimraf = require('rimraf');
 
 /**
  * Return a stream for deleting the original file
- * @param   {Object}          options
+ * @param   {object}          [options]
  * @param   {RegExp|function} [options.exclude]
+ * @param   {function}        [options.remove]
  * @returns {function}
  */
 module.exports = function(options) {
+
+  var exclude = options && options.exclude || false;
+  var remove = options && options.remove || rimraf;
+
   options = options || {};
-  return through.obj(function (file, enc, cb) {
+  return through.obj(function(file, enc, cb) {
 
     //delete the original file
     var del = function() {
-      rimraf(file.revOrigPath, function(err) {
-        if (err) cb(err);
-        cb(null, file);
+      remove(file.revOrigPath, function(err) {
+        if (err) {
+          cb(err);
+        } else {
+          cb(null, file);
+        }
       });
     };
 
@@ -25,14 +33,14 @@ module.exports = function(options) {
     }
 
     //exclude files from being deleted
-    if (options.exclude) {
+    if (exclude) {
 
       var
         excluded,
-        filter = options.exclude
+        filter = exclude
       ;
 
-      if (typeof(filter) === 'function') {
+      if (typeof filter === 'function') {
         excluded = filter(file);
       } else if(filter instanceof RegExp) {
         excluded = filter.test(file.path);
@@ -41,13 +49,18 @@ module.exports = function(options) {
       if (excluded) {
         return cb(null, file);
       } else {
+
+        //delete the original file
         return del();
+
       }
 
-    }
+    } else {
 
-    //delete the original file
-    return del();
+      //delete the original file
+      return del();
+
+    }
 
   });
 };
