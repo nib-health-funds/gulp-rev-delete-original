@@ -7,26 +7,28 @@ Delete the original file rewritten by
 ## Installation
 
     npm install --save-dev gulp-rev-delete-original
-  
+
 ## Usage
 
-    var gulp = require('gulp');
-    var rev = require('gulp-rev');
-    var revcss = require('gulp-rev-css-url');
-    var revdel = require('gulp-rev-delete-original');
-    
-    gulp.task('rev', function () {
-      return gulp.src('./app/**/*')
-        .pipe(rev())
-        .pipe(revcss())
-        .pipe(revdel())
-        .pipe(gulp.dest('./build/'))
-      ;
-    });
+```js
+var gulp = require('gulp');
+var rev = require('gulp-rev');
+var revcss = require('gulp-rev-css-url');
+var revdel = require('gulp-rev-delete-original');
+
+gulp.task('rev', function () {
+  return gulp.src('./app/**/*')
+    .pipe(rev())
+    .pipe(revcss())
+    .pipe(revdel())
+    .pipe(gulp.dest('./build/'))
+  ;
+});
+```
 
 ## Options
 
-#### exclude 
+#### exclude
 
 A filter `RegExp` or `function` that allows you to exclude certain files from being deleted.
 
@@ -34,16 +36,20 @@ A filter `RegExp` or `function` that allows you to exclude certain files from be
 
 RegExp:
 
-    revdel({
-      exclude: /build\.css$/
-    });
+```js
+revdel({
+  exclude: /build\.css$/
+});
+```
 
-Function: 
+Function:
 
-    revdel({
-      exclude: function(file) {
-        if (/build\.css$/.test(file.name)) {
-          return true; //if you want to exclude the file from being deleted
-        }
-      }
-    });
+```js
+revdel({
+  exclude: function(file) {
+    if (/build\.css$/.test(file.name)) {
+      return true; //if you want to exclude the file from being deleted
+    }
+  }
+});
+```
