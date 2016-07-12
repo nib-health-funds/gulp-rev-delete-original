@@ -18,7 +18,7 @@ module.exports = function(options) {
 
     //delete the original file
     var del = function() {
-      if(!file.isDirectory())
+      if(file.revOrigPath)
       {
         rimraf(file.revOrigPath, function(err) {
           if (err) return cb(err);
