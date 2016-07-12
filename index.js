@@ -21,7 +21,7 @@ module.exports = function(options) {
       if(!file.isDirectory())
       {
         rimraf(file.revOrigPath, function(err) {
-          if (err) cb(err);
+          if (err) return cb(err);
           cb(null, file);
         });
       } else {
