@@ -18,13 +18,15 @@ module.exports = function(options) {
 
     //delete the original file
     var del = function() {
-      remove(file.revOrigPath, function(err) {
-        if (err) {
-          cb(err);
-        } else {
+      if(file.revOrigPath)
+      {
+        rimraf(file.revOrigPath, function(err) {
+          if (err) return cb(err);
           cb(null, file);
-        }
-      });
+        });
+      } else {
+        cb(null);
+      }
     };
 
     //don't delete files that haven't been rewritten
