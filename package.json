@@ -1,6 +1,7 @@
 {
   "name": "gulp-rev-delete-original",
   "version": "0.2.2",
+  "description": "Delete the original file rewritten by gulp-rev.",
   "keywords": [
     "gulpplugin",
     "rev",
