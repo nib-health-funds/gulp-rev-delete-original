@@ -16,11 +16,11 @@
   },
   "dependencies": {
     "rimraf": "^2.3.4",
-    "through2": "^0.6.5"
+    "through2": "^2.0.3"
   },
   "devDependencies": {
-    "mocha": "^2.4.5",
-    "vinyl": "^1.1.1"
+    "mocha": "^5.2.0",
+    "vinyl": "^2.1.0"
   },
   "scripts": {
     "test": "mocha"
